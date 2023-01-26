@@ -1,6 +1,11 @@
+import React from "react";
 
-function Header() {
+function Header(){
     return (
-        <span className="headerText">Thought Log.</span>
+        <div>
+            <span className="headerText">Thought Log.</span>
+        </div>
     )
 }
+
+export default Header;
