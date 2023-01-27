@@ -1,10 +1,11 @@
 import React from "react";
 import LogsCard from "./LogsCard";
+import { Card } from "semantic-ui-react";
 
 function LogsPage( { logs, mode } ) {
 
     return (
-        <div>
+        <Card.Group itemsPerRow = {3}>
             {logs.map((log) => 
                  <LogsCard
                     key={log.id}
@@ -17,7 +18,7 @@ function LogsPage( { logs, mode } ) {
                     mode={mode}
                 />
         )}
-        </div>
+        </Card.Group>
         
     )
 }

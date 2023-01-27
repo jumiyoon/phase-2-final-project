@@ -6,6 +6,7 @@ import LogsPage from "./LogsPage";
 
 
 
+
 function App() {
   const [ allLogs, setAllLogs ] = useState([]);
   const [ isDarkMode, setIsDarkMode ] = useState(false);
