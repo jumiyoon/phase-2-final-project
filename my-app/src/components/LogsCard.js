@@ -4,17 +4,16 @@ import podcast from "/Users/jumiyoon/Development/code/phase-2/phase-2-final-proj
 import ThoughtsButton from "./ThoughtsButton";
 import { Card } from "semantic-ui-react";
 
-
 function LogsCard( { title, author, category, url, genre, thoughts, mode }){
     return(
-            <Card>
+            <Card color={mode ? "orange" : "purple"}>
                 <div className="icon">
                     <img alt={category} src={category === "Book" ? book : podcast}/>
                 </div>
-                <h2 className={mode ? "darkText" : "lightText"}>
+                <h2>
                     {title}
                 </h2>
-                <p className={mode ? "darkText" : "lightText"}>
+                <p>
                     <strong>Author:</strong> {author} 
                     <br />
                     <a href={url}>Link</a>
