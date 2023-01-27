@@ -7,6 +7,7 @@ import LogsPage from "./LogsPage";
 
 function App() {
   const [ allLogs, setAllLogs ] = useState([]);
+  const [ darkMode, setDarkMode ] = useState(false);
 
   useEffect(() => {
     fetch("https://phase-2-final-json-server.onrender.com/reflections")
