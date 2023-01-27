@@ -16,7 +16,6 @@ function LogsPage( { logs } ) {
                     thoughts={log.thoughts}
                 />
         )}
-
         </div>
         
     )

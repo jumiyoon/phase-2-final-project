@@ -10,7 +10,7 @@ function App() {
   const [ darkMode, setDarkMode ] = useState(false);
 
   function darkModeClick() {
-    setDarkMode((darkMode) => !!darkMode)
+    setDarkMode((darkMode) => !darkMode)
   }
 
   useEffect(() => {
@@ -23,7 +23,7 @@ function App() {
 
   return (
     <div className="App" style={{ backgroundImage:`url(${image})` }}>
-      <Header onDarkModeClick={darkModeClick} />
+      <Header onDarkModeClick={darkModeClick} mode={darkMode} />
       <LogsPage logs={allLogs} />
     </div>
   );

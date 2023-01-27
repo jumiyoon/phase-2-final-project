@@ -1,9 +1,14 @@
 import React from "react";
 
-function Header(){
+function Header( {onDarkModeClick, mode}){
     return (
         <div>
-            <span className="headerText">Thought Log.</span>
+            <header>
+                <span className="headerText">Thought Log.</span>
+                <button onClick={onDarkModeClick}>
+                    {mode ? "Dark" : "Light"} Mode
+                </button>
+            </header>
         </div>
     )
 }
