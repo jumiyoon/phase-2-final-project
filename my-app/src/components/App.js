@@ -9,6 +9,10 @@ function App() {
   const [ allLogs, setAllLogs ] = useState([]);
   const [ darkMode, setDarkMode ] = useState(false);
 
+  function darkModeClick() {
+    setDarkMode((darkMode) => !!darkMode)
+  }
+
   useEffect(() => {
     fetch("https://phase-2-final-json-server.onrender.com/reflections")
       .then((res) => res.json())
@@ -19,7 +23,7 @@ function App() {
 
   return (
     <div className="App" style={{ backgroundImage:`url(${image})` }}>
-      <Header />
+      <Header onDarkModeClick={darkModeClick} />
       <LogsPage logs={allLogs} />
     </div>
   );
