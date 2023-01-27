@@ -2,16 +2,18 @@ import React from "react";
 import book from "/Users/jumiyoon/Development/code/phase-2/phase-2-final-project/my-app/src/assets/img/book icon.png";
 import podcast from "/Users/jumiyoon/Development/code/phase-2/phase-2-final-project/my-app/src/assets/img/podcast icon.png";
 import ThoughtsButton from "./ThoughtsButton";
+import { Card } from "semantic-ui-react";
+
 
 function LogsCard( { title, author, category, url, genre, thoughts, mode }){
     return(
-            <div>
+            <Card>
                 <div className="icon">
                     <img alt={category} src={category === "Book" ? book : podcast}/>
                 </div>
-                <div className={mode ? "darkText" : "lightText"}>
+                <h2 className={mode ? "darkText" : "lightText"}>
                     {title}
-                </div>
+                </h2>
                 <p className={mode ? "darkText" : "lightText"}>
                     <strong>Author:</strong> {author} 
                     <br />
@@ -20,8 +22,8 @@ function LogsCard( { title, author, category, url, genre, thoughts, mode }){
                     <strong>Genre:</strong> {genre}
                     <br />
                 </p>
-                <ThoughtsButton thoughts={thoughts} />
-            </div>
+                <ThoughtsButton thoughts={thoughts} mode={mode} />
+            </Card>
     )
 }
 

@@ -7,8 +7,13 @@ body {
 .App {
   text-align: center;
 }
+
+.header {
+  height: 150px;
+  padding: 100px;
+}
 .darkMode {
-  color: orange;
+  color: rgb(245, 195, 103);
   font-size: 7em;
   font-family: Georgia, 'Times New Roman', Times, serif;
   margin: 0% 2% 0% 2%;
@@ -30,3 +35,4 @@ body {
   color: black;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
+
