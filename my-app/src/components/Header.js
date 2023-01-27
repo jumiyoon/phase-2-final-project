@@ -6,7 +6,7 @@ function Header( {onDarkModeClick, mode}){
             <header>
                 <span className="headerText">Thought Log.</span>
                 <button onClick={onDarkModeClick}>
-                    {mode ? "Dark" : "Light"} Mode
+                    {mode ? "Light" : "Dark"} Mode
                 </button>
             </header>
         </div>
