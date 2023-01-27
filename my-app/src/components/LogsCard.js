@@ -6,8 +6,8 @@ import { Card } from "semantic-ui-react";
 
 function LogsCard( { title, author, category, url, genre, thoughts, mode }){
     return(
-            <Card color={mode ? "orange" : "purple"}>
-                <div className="icon">
+            <Card className="card" color={mode ? "orange" : "purple"}>
+                <div>
                     <img alt={category} src={category === "Book" ? book : podcast}/>
                 </div>
                 <h2>
