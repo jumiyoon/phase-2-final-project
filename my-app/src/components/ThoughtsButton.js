@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 function ThoughtsButton( { thoughts }) {
     const [ isOpen, setIsOpen ] = useState(false)
-    const button = <button onClick = {handleClick}>{ isOpen ? "View Thoughts" : "Hide Thoughts"}</button>
+    const button = <button onClick = {handleClick}>{ isOpen ? "Hide Thoughts" : "View Thoughts" }</button>
 
     function handleClick() {
         setIsOpen(!isOpen)
@@ -10,7 +10,8 @@ function ThoughtsButton( { thoughts }) {
 
     return (
         <div>
-            { isOpen ?  null :<span>{thoughts}</span>}
+            {button} <br />
+            { isOpen ?  <span>{thoughts}</span> : null }
         </div>
     )
     

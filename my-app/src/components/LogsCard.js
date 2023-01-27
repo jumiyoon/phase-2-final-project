@@ -7,15 +7,18 @@ function LogsCard( { title, author, category, url, genre, thoughts }){
     return(
             <div>
                 <div className="icon">
-                    <img alt={category} src={category === "Book" ? {book} : {podcast}}/>
+                    <img alt={category} src={category === "Book" ? book : podcast}/>
                 </div>
                 <div className="log-title">
                     {title}
                 </div>
                 <p className="log-content">
-                    Author: {author} 
-                    URL: {url}
-                    Genre: {genre}
+                    <strong>Author:</strong> {author} 
+                    <br />
+                    <strong>URL:</strong> {url}
+                    <br />
+                    <strong>Genre:</strong> {genre}
+                    <br />
                 </p>
                 <ThoughtsButton thoughts={thoughts} />
             </div>
