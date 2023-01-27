@@ -26,7 +26,7 @@ function App() {
   return (
     <div className="App" style={isDarkMode ? { backgroundImage:`url(${darkImage})`} :  { backgroundImage:`url(${image})`}}>
       <Header onDarkModeClick={darkModeClick} mode={isDarkMode} />
-      <LogsPage logs={allLogs} />
+      <LogsPage logs={allLogs} mode={isDarkMode} />
     </div>
   );
 }

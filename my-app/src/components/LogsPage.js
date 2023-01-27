@@ -1,7 +1,7 @@
 import React from "react";
 import LogsCard from "./LogsCard";
 
-function LogsPage( { logs } ) {
+function LogsPage( { logs, mode } ) {
 
     return (
         <div>
@@ -14,6 +14,7 @@ function LogsPage( { logs } ) {
                     url={log.url}
                     genre={log.genre}
                     thoughts={log.thoughts}
+                    mode={mode}
                 />
         )}
         </div>

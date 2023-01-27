@@ -3,16 +3,16 @@ import book from "/Users/jumiyoon/Development/code/phase-2/phase-2-final-project
 import podcast from "/Users/jumiyoon/Development/code/phase-2/phase-2-final-project/my-app/src/assets/img/podcast icon.png";
 import ThoughtsButton from "./ThoughtsButton";
 
-function LogsCard( { title, author, category, url, genre, thoughts }){
+function LogsCard( { title, author, category, url, genre, thoughts, mode }){
     return(
             <div>
                 <div className="icon">
                     <img alt={category} src={category === "Book" ? book : podcast}/>
                 </div>
-                <div className="log-title">
+                <div className={mode ? "darkText" : "lightText"}>
                     {title}
                 </div>
-                <p className="log-content">
+                <p className={mode ? "darkText" : "lightText"}>
                     <strong>Author:</strong> {author} 
                     <br />
                     <a href={url}>Link</a>
