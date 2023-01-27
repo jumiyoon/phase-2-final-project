@@ -12,6 +12,7 @@ function ThoughtsButton( { thoughts, mode}) {
         <div className={mode ? "darkText" : "lightText"}>
             {button} <br />
             { isOpen ?  <span>{thoughts}</span> : null }
+            <br />
         </div>
     )
     

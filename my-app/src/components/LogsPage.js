@@ -1,5 +1,7 @@
 import React from "react";
 import LogsCard from "./LogsCard";
+import LogForm from "./LogForm";
+
 import { Card } from "semantic-ui-react";
 import { Container } from "semantic-ui-react";
 
@@ -7,7 +9,7 @@ function LogsPage( { logs, mode } ) {
 
     return (
         <Container>
-            <Card.Group itemsPerRow = {3}>
+            <Card.Group itemsPerRow = {4}>
                 {logs.map((log) => 
                     <LogsCard
                         key={log.id}
