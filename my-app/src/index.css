@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: "my-app/src/square-background.jpg"
+  font-family: sans-serif;
 }
 
 .headerText {
@@ -9,4 +9,8 @@ body {
   font-size: 7em;
   font-family: Georgia, 'Times New Roman', Times, serif;
   margin: 0% 2% 0% 2%;
+}
+
+.App {
+  text-align: center;
 }
