@@ -15,7 +15,7 @@ function LogsCard( { title, author, category, url, genre, thoughts }){
                 <p className="log-content">
                     <strong>Author:</strong> {author} 
                     <br />
-                    <strong>URL:</strong> {url}
+                    <a href={url}>Link</a>
                     <br />
                     <strong>Genre:</strong> {genre}
                     <br />
