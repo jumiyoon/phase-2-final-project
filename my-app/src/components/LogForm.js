@@ -17,14 +17,15 @@ function LogForm(){
                 <h1>Create New Log</h1>
                 <Form>
                     <Form.Group >
-                        <Form.Input fluid label="Title" placeholder="Title" />
-                        <Form.Input fluid label="Author" placeholder="Author" />
-                        <Form.Input fluid label="URL" placeholder="URL" />
+                        <Form.Input fluid label="Title" placeholder="Title" width={5}/>
+                        <Form.Input fluid label="Author" placeholder="Author" width={5} />
+                        <Form.Input fluid label="URL" placeholder="URL" width={10} />
                         <Form.Select
                             fluid
                             label="Genre"
                             options={genres}
                             placeholder='Genre'
+                            width={7}
                         />
                     </Form.Group>
                     <Form.Group inline>
@@ -39,7 +40,7 @@ function LogForm(){
                             />
                     </Form.Group>
                     <Form.Group>
-                        <Form.Field label="Thoughts" placeholder="My Thoughts" control='textarea' rows='3' />
+                        <Form.Field width={15} label="Thoughts" placeholder="My Thoughts" control='textarea' rows='5' />
                     </Form.Group>
                 </Form>
             </Container>
