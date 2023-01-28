@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
+import { Route, Switch } from "react-router-dom";
 import Header from "./Header";
 import image from "/Users/jumiyoon/Development/code/phase-2/phase-2-final-project/my-app/src/assets/img/square-background.png";
 import darkImage from "/Users/jumiyoon/Development/code/phase-2/phase-2-final-project/my-app/src/assets/img/background-darkmode.png";
 import LogsPage from "./LogsPage";
+import NavBar from "./NavBar";
 
 
 
