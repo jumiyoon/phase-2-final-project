@@ -19,7 +19,7 @@ function NavBar() {
                 exact
                 style={barStyle}
                 activeStyle={{background: "orange"}}
-            >View All</NavLink>
+            >Home</NavLink>
         </div>
     )
 }

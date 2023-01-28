@@ -1,6 +1,6 @@
 import React from "react";
 import LogsCard from "./LogsCard";
-import LogForm from "./LogForm";
+
 
 import { Card } from "semantic-ui-react";
 import { Container } from "semantic-ui-react";

@@ -5,6 +5,7 @@ import image from "/Users/jumiyoon/Development/code/phase-2/phase-2-final-projec
 import darkImage from "/Users/jumiyoon/Development/code/phase-2/phase-2-final-project/my-app/src/assets/img/background-darkmode.png";
 import LogsPage from "./LogsPage";
 import NavBar from "./NavBar";
+import LogForm from "./LogForm";
 
 
 
@@ -33,6 +34,9 @@ function App() {
         <Switch>
           <Route exact path="/home">
             <LogsPage logs={allLogs} mode={isDarkMode} />
+          </Route>
+          <Route exact path="/newlog">
+            <LogForm />
           </Route>
         </Switch>
 
