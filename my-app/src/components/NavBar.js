@@ -20,6 +20,12 @@ function NavBar() {
                 style={barStyle}
                 activeStyle={{background: "orange"}}
             >Home</NavLink>
+            <NavLink
+                to="/newlog"
+                exact
+                style={barStyle}
+                activeStyle={{background:"orange"}}
+            >New Log Form</NavLink>
         </div>
     )
 }
