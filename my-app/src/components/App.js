@@ -36,7 +36,7 @@ function App() {
             <LogsPage logs={allLogs} mode={isDarkMode} />
           </Route>
           <Route exact path="/newlog">
-            <LogForm />
+            <LogForm mode={isDarkMode} />
           </Route>
         </Switch>
 

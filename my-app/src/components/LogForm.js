@@ -1,8 +1,8 @@
 import React from "react";
-import { Form, Container } from "semantic-ui-react";
+import { Button, Form, Container, Segment } from "semantic-ui-react";
 
 
-function LogForm(){
+function LogForm( { mode }){
 
     const genres = [
         { key: "f", text: "Fiction", value: 'fiction' },
@@ -10,12 +10,48 @@ function LogForm(){
         { key: "pr", text: "Philosophy / Religion", value: "philRel"},
         { key: "be", text: "Business / Economics", value: "bizEcon"}
       ]
+      
+
 
     return (
         <div>
-            <Container>
+            {mode ? <Container>
+                    <Segment inverted>
+                    <h1>Create New Log</h1>
+                    <Form inverted>
+                        <Form.Group >
+                            <Form.Input fluid label="Title" placeholder="Title" width={5}/>
+                            <Form.Input fluid label="Author" placeholder="Author" width={5} />
+                            <Form.Input fluid label="URL" placeholder="URL" width={10} />
+                            <Form.Select
+                                fluid
+                                label="Genre"
+                                options={genres}
+                                placeholder='Genre'
+                                width={7}
+                            />
+                        </Form.Group>
+                        <Form.Group inline>
+                            <label>Category</label>
+                                <Form.Radio
+                                    label="Book"
+                                    value='bo'
+                                />
+                                <Form.Radio
+                                    label="TedTalk / Podcast"
+                                    value='tp'
+                                />
+                        </Form.Group>
+                        <Form.Group>
+                            <Form.Field width={15} label="Thoughts" placeholder="My Thoughts" control='textarea' rows='5' />
+                        </Form.Group>
+                        <Button type='submit'>Submit</Button>
+                    </Form>
+                    </Segment>
+                </Container> : 
+                <Container>
                 <h1>Create New Log</h1>
-                <Form>
+                <Form >
                     <Form.Group >
                         <Form.Input fluid label="Title" placeholder="Title" width={5}/>
                         <Form.Input fluid label="Author" placeholder="Author" width={5} />
@@ -42,8 +78,9 @@ function LogForm(){
                     <Form.Group>
                         <Form.Field width={15} label="Thoughts" placeholder="My Thoughts" control='textarea' rows='5' />
                     </Form.Group>
+                    <Button type='submit'>Submit</Button>
                 </Form>
-            </Container>
+            </Container>}
         </div>
     )
 
