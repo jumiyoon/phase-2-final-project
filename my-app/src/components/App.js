@@ -39,7 +39,6 @@ function App() {
             <LogForm mode={isDarkMode} />
           </Route>
         </Switch>
-
         
     </div>
   );
