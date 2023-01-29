@@ -24,7 +24,9 @@ function App() {
       .then((data) => setAllLogs(data))
   }, [])
 
-   
+  function onFormSubmit(log) {
+    console.log("new log submitted!")
+  }
 
 
   return (
@@ -36,7 +38,7 @@ function App() {
             <LogsPage logs={allLogs} mode={isDarkMode} />
           </Route>
           <Route exact path="/newlog">
-            <LogForm mode={isDarkMode} />
+            <LogForm mode={isDarkMode} onSubmit={onFormSubmit}/>
           </Route>
         </Switch>
         

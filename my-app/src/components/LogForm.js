@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Form, Container, Segment } from "semantic-ui-react";
 
 
-function LogForm( { mode }){
+function LogForm( { mode, onSubmit }){
     function handleSubmit(event) {
         const newLogData = {
             title: event.target[0].value,
