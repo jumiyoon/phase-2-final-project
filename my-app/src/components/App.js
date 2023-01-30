@@ -24,8 +24,18 @@ function App() {
       .then((data) => setAllLogs(data))
   }, [])
 
-  function onFormSubmit(log) {
+  function onFormSubmit(newLog) {
     console.log("new log submitted!")
+    const newLogList = [...allLogs, newLog]
+    setAllLogs(newLogList)
+
+    fetch("https://phase-2-final-json-server.onrender.com/reflections", {
+      method: "POST",
+      headers: {
+        "Conent-Type": "application/json",
+      },
+      body: JSON.stringify(newLog)
+    })
   }
 
 

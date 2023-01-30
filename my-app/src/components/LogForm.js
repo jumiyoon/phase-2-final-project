@@ -1,34 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Form, Container, Segment } from "semantic-ui-react";
 
 
-function LogForm( { mode, onSubmit }){
+function LogForm( { mode }){
     function handleSubmit(event) {
+        console.log(event)
         const newLogData = {
             title: event.target[0].value,
             author: event.target[1].value,
             url: event.target[2].value,
-            genre: event.target[3].value,
-            category:event.target[4].value,
+            genre: genre,
+            category: category,
             thoughts: event.target[5].value
         }
+        console.log(newLogData);
 
-        onSubmit(newLogData)
+
     }
 
     const genres = [
-        { key: "f", text: "Fiction", value: 'fiction' },
-        { key: "ps", text: "Psychology / Sociology", value: "psychSoc" },
-        { key: "pr", text: "Philosophy / Religion", value: "philRel"},
-        { key: "be", text: "Business / Economics", value: "bizEcon"}
+        { key: "f", text: "Fiction", value: 'Fiction' },
+        { key: "ps", text: "Psychology / Sociology", value: "Psychology / Sociology" },
+        { key: "pr", text: "Philosophy / Religion", value: "Philosophy / Religion"},
+        { key: "be", text: "Business / Economics", value: "Business / Economics"}
       ]
+
+    const [ genre, setGenre ] = useState("")
+    function handleGenre(e) {
+        setGenre(e.target.value)
+    }
+
+    const [ category, setCategory ] = useState("")
+
+    function handleCategory(category) {
+        setCategory(category)
+    }
+
 
     return (
         <div>
             {mode ? <Container>
                     <Segment inverted>
                     <h1>Create New Log</h1>
-                    <Form inverted onSubmit={handleSubmit}>
+                    <Form size="large" inverted onSubmit={handleSubmit}>
                         <Form.Group >
                             <Form.Input fluid label="Title" placeholder="Title" width={5}/>
                             <Form.Input fluid label="Author" placeholder="Author" width={5} />
@@ -39,18 +53,25 @@ function LogForm( { mode, onSubmit }){
                                 options={genres}
                                 placeholder='Genre'
                                 width={7}
+                                onChange={() => handleGenre}
                             />
                         </Form.Group>
                         <Form.Group inline>
-                            <label>Category</label>
-                                <Form.Radio
-                                    label="Book"
-                                    value='bo'
-                                />
-                                <Form.Radio
-                                    label="TedTalk / Podcast"
-                                    value='tp'
-                                />
+                        <label>Category</label>
+                        <Form.Field
+                            label='Book'
+                            control='input'
+                            type='radio'
+                            name='Book'
+                            onChange={()=>handleCategory("Book")}
+                        />
+                        <Form.Field
+                            label='That one'
+                            control='input'
+                            type='radio'
+                            name='Book'
+                            onChange={()=>handleCategory("TedTalk / Podcast")}
+                        />
                         </Form.Group>
                         <Form.Group>
                             <Form.Field width={15} label="Thoughts" placeholder="My Thoughts" control='textarea' rows='5' />
@@ -61,7 +82,7 @@ function LogForm( { mode, onSubmit }){
                 </Container> : 
                 <Container>
                 <h1>Create New Log</h1>
-                <Form onSubmit={handleSubmit}>
+                <Form size="large" onSubmit={handleSubmit}>
                     <Form.Group >
                         <Form.Input fluid label="Title" placeholder="Title" width={5}/>
                         <Form.Input fluid label="Author" placeholder="Author" width={5} />
@@ -75,15 +96,21 @@ function LogForm( { mode, onSubmit }){
                         />
                     </Form.Group>
                     <Form.Group inline>
-                        <label>Category</label>
-                            <Form.Radio
-                                label="Book"
-                                value='bo'
-                            />
-                            <Form.Radio
-                                label="TedTalk / Podcast"
-                                value='tp'
-                            />
+                    <label>Category</label>
+                    <Form.Field
+                        label='Book'
+                        control='input'
+                        type='radio'
+                        name='Book'
+                        onChange={()=>handleCategory("Book")}
+                    />
+                    <Form.Field
+                        label='That one'
+                        control='input'
+                        type='radio'
+                        name='Book'
+                        onChange={()=>handleCategory("TedTalk / Podcast")}
+                    />
                     </Form.Group>
                     <Form.Group>
                         <Form.Field width={15} label="Thoughts" placeholder="My Thoughts" control='textarea' rows='5' />
