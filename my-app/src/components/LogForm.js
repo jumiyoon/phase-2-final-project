@@ -4,16 +4,17 @@ import { Button, Form, Container, Segment } from "semantic-ui-react";
 
 function LogForm( { mode, onNewLogSubmit }){
     function handleSubmit(event) {
+        console.log(event)
         const newLogData = {
-            title: event.target[0].value,
-            author: event.target[1].value,
-            url: event.target[2].value,
-            genre: genre,
-            category: category,
-            thoughts: event.target[5].value
+            "title": event.target[0].value,
+            "author": event.target[1].value,
+            "url": event.target[2].value,
+            "genre": genre,
+            "category": category,
+            "thoughts": event.target[5].value
         }
         console.log(newLogData);
-        onNewLogSubmit(newLogData)
+        onNewLogSubmit(newLogData);
 
     }
 
@@ -30,8 +31,7 @@ function LogForm( { mode, onNewLogSubmit }){
     }
 
     const [ category, setCategory ] = useState("")
-
-    function handleCategory(category) {
+     function handleCategory(category) {
         setCategory(category)
     }
 
