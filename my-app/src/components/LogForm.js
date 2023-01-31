@@ -22,11 +22,11 @@ function LogForm( { mode, onNewLogSubmit }){
         { key: "ps", text: "Psychology / Sociology", value: "Psychology / Sociology" },
         { key: "pr", text: "Philosophy / Religion", value: "Philosophy / Religion"},
         { key: "be", text: "Business / Economics", value: "Business / Economics"}
-      ]
+    ]
 
     const [ genre, setGenre ] = useState("")
     function handleGenre(e) {
-        setGenre(e.target.value)
+        setGenre(e.target.textContent)
     }
 
     const [ category, setCategory ] = useState("")
