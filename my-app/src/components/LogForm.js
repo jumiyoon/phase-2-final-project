@@ -2,9 +2,8 @@ import React, { useState } from "react";
 import { Button, Form, Container, Segment } from "semantic-ui-react";
 
 
-function LogForm( { mode }){
+function LogForm( { mode, onNewLogSubmit }){
     function handleSubmit(event) {
-        console.log(event)
         const newLogData = {
             title: event.target[0].value,
             author: event.target[1].value,
@@ -14,7 +13,7 @@ function LogForm( { mode }){
             thoughts: event.target[5].value
         }
         console.log(newLogData);
-
+        onNewLogSubmit(newLogData)
 
     }
 
@@ -53,7 +52,7 @@ function LogForm( { mode }){
                                 options={genres}
                                 placeholder='Genre'
                                 width={7}
-                                onChange={() => handleGenre}
+                                onChange={handleGenre}
                             />
                         </Form.Group>
                         <Form.Group inline>
@@ -66,7 +65,7 @@ function LogForm( { mode }){
                             onChange={()=>handleCategory("Book")}
                         />
                         <Form.Field
-                            label='That one'
+                            label='TedTalk / Podcast'
                             control='input'
                             type='radio'
                             name='Book'
@@ -93,6 +92,7 @@ function LogForm( { mode }){
                             options={genres}
                             placeholder='Genre'
                             width={7}
+                            onChange={handleGenre}
                         />
                     </Form.Group>
                     <Form.Group inline>
@@ -105,7 +105,7 @@ function LogForm( { mode }){
                         onChange={()=>handleCategory("Book")}
                     />
                     <Form.Field
-                        label='That one'
+                        label='TedTalk / Podcast'
                         control='input'
                         type='radio'
                         name='Book'

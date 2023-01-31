@@ -25,10 +25,6 @@ function App() {
   }, [])
 
   function onFormSubmit(newLog) {
-    console.log("new log submitted!")
-    const newLogList = [...allLogs, newLog]
-    setAllLogs(newLogList)
-
     fetch("https://phase-2-final-json-server.onrender.com/reflections", {
       method: "POST",
       headers: {
@@ -36,6 +32,14 @@ function App() {
       },
       body: JSON.stringify(newLog)
     })
+    .then(res => res.json())
+    .then(data => addLog(data)) //THIS STATE UPDATE IS REQUIRED!!!
+  }
+
+  function addLog(newLog){
+    console.log("new log submitted!")
+    const newLogList = [...allLogs, newLog]
+    setAllLogs(newLogList)
   }
 
 
@@ -48,7 +52,7 @@ function App() {
             <LogsPage logs={allLogs} mode={isDarkMode} />
           </Route>
           <Route exact path="/newlog">
-            <LogForm mode={isDarkMode} onSubmit={onFormSubmit}/>
+            <LogForm mode={isDarkMode} onNewLogSubmit={onFormSubmit}/>
           </Route>
         </Switch>
         
