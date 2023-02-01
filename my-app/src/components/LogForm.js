@@ -14,7 +14,12 @@ function LogForm( { mode, onNewLogSubmit }){
 
     function handleChange(event) {
         const name = event.target.name;
-        const value = event.target.value;
+        let value = event.target.value;
+
+        if (name === "genre") {
+            value = event.target.textContent;
+            console.log("genre is", value)
+        }
 
         setForm({
             ...form,
@@ -28,12 +33,14 @@ function LogForm( { mode, onNewLogSubmit }){
 
     }
 
+ 
     const genres = [
         { key: "f", text: "Fiction", value: 'Fiction' },
         { key: "ps", text: "Psychology / Sociology", value: "Psychology / Sociology" },
         { key: "pr", text: "Philosophy / Religion", value: "Philosophy / Religion"},
         { key: "be", text: "Business / Economics", value: "Business / Economics"}
     ]
+    
     return (
         <div>
             {mode ? <Container>
@@ -94,7 +101,7 @@ function LogForm( { mode, onNewLogSubmit }){
                                 options={genres}
                                 placeholder='Genre'
                                 width={7}
-                                onChange={handleChange}
+                                onChange={(e, { value }) => handleChange(e, value)}
                             />
                         </Form.Group>
                         <Form.Group inline>

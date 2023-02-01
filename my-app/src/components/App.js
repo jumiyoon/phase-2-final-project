@@ -19,13 +19,13 @@ function App() {
   }
 
   useEffect(() => {
-    fetch("https://phase-2-final-json-server.onrender.com/reflections")
+    fetch("http://localhost:3000/reflections")
       .then((res) => res.json())
       .then((data) => setAllLogs(data))
   }, [])
 
   function onFormSubmit(newLog) {
-    fetch("https://phase-2-final-json-server.onrender.com/reflections", {
+    fetch("http://localhost:3000/reflections", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -38,7 +38,6 @@ function App() {
 
   function addLog(newLog){
     console.log("new log submitted!")
-    console.log(newLog)
     const newLogList = [...allLogs, newLog]
     setAllLogs(newLogList)
   }
