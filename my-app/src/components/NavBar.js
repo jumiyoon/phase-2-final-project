@@ -4,11 +4,10 @@ import { NavLink } from "react-router-dom";
 function NavBar() {
     const barStyle = {
         display: "inline-block",
-        width: "50px",
-        padding: "12px",
+        width: "150px",
+        padding: "20px",
         margin: "0 6px 6px",
         background: "purple",
-        textDecoration: "none",
         color: "white",      
     };
 
@@ -21,11 +20,18 @@ function NavBar() {
                 activeStyle={{background: "orange"}}
             >Home</NavLink>
             <NavLink
+                to="/logs"
+                exact
+                style={barStyle}
+                activeStyle={{background: "orange"}}
+            >View Logs</NavLink>
+            <NavLink
                 to="/newlog"
                 exact
                 style={barStyle}
                 activeStyle={{background:"orange"}}
             >New Log Form</NavLink>
+
         </div>
     )
 }

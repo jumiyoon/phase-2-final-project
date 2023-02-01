@@ -26,3 +26,17 @@ body {
   font-family: Georgia, 'Times New Roman', Times, serif;
   margin: 0% 2% 0% 2%;
 }
+
+.darkModeHome {
+  color: rgb(240, 218, 177);
+  font-size: 4em;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin: 0% 2% 0% 2%;
+}
+
+.lightModeHome {
+  color: #765c8f;
+  font-size: 4em;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin: 0% 2% 0% 2%;
+}

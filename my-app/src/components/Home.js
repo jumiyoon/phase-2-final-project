@@ -1,9 +1,11 @@
 import React from "react";
 
-function Home() {
+function Home( {mode} ) {
     return (
         <div>
-            <h2 className="header">...an intellectual warehouse for your mind!</h2>
+            <span className={mode ? "darkModeHome" : "lightModeHome"}><br /><br /><br /><br/>an intellectual warehouse for your inquisitive mind.</span>
         </div>
     )
 }
+
+export default Home;
