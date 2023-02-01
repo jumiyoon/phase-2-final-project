@@ -52,7 +52,7 @@ function App() {
             <LogsPage logs={allLogs} mode={isDarkMode} />
           </Route>
           <Route exact path="/newlog">
-            <LogForm mode={isDarkMode} onNewLogSubmit={onFormSubmit} postRequest={addLog} />
+            <LogForm mode={isDarkMode} onFormSubmit={onFormSubmit} postRequest={addLog} />
           </Route>
         </Switch>
         

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Button, Form, Container, Segment } from "semantic-ui-react";
 
 
-function LogForm( { mode, onNewLogSubmit }){
+function LogForm( { mode, onFormSubmit }){
     const [ form, setForm ] = useState({
         title: "The Old Man and the Sea",
         author: "Ernest Hemingway",
@@ -13,14 +13,13 @@ function LogForm( { mode, onNewLogSubmit }){
     })
 
     function handleChange(event) {
-        const name = event.target.name;
+        let name = event.target.name;
         let value = event.target.value;
 
-        if (name === "genre") {
+        if (event.target.name === undefined) {
+            name = "genre"
             value = event.target.textContent;
-            console.log("genre is", value)
         }
-
         setForm({
             ...form,
             [name]: value});
@@ -28,9 +27,7 @@ function LogForm( { mode, onNewLogSubmit }){
 
     function handleSubmit(event) {
         console.log(form);
-        onNewLogSubmit(form);
-
-
+        onFormSubmit(form);
     }
 
  
@@ -40,7 +37,7 @@ function LogForm( { mode, onNewLogSubmit }){
         { key: "pr", text: "Philosophy / Religion", value: "Philosophy / Religion"},
         { key: "be", text: "Business / Economics", value: "Business / Economics"}
     ]
-    
+
     return (
         <div>
             {mode ? <Container>
@@ -101,7 +98,7 @@ function LogForm( { mode, onNewLogSubmit }){
                                 options={genres}
                                 placeholder='Genre'
                                 width={7}
-                                onChange={(e, { value }) => handleChange(e, value)}
+                                onChange={handleChange}
                             />
                         </Form.Group>
                         <Form.Group inline>

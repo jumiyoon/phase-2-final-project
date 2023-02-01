@@ -1,13 +1,14 @@
 import React from "react";
+import { Button } from 'semantic-ui-react'
 
 function Header( {onDarkModeClick, mode}){
     return (
         <div>
             <header className="header">
                 <span className={mode ? "darkMode" : "lightMode"} >Thought Log.</span>
-                <button onClick={onDarkModeClick}>
+                <Button primary onClick={onDarkModeClick}>
                     {mode ? "Light" : "Dark"} Mode
-                </button>
+                </Button>
             </header>
         </div>
     )
