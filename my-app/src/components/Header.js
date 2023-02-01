@@ -6,15 +6,14 @@ function Header( {onDarkModeClick, mode}){
         <div>
             <header className="header">
                 <span className={mode ? "darkMode" : "lightMode"} >Thought Log.</span>
-                {mode ? 
+                { mode ? 
                 <Button primary onClick={onDarkModeClick}>
                     {mode ? "Light" : "Dark"} Mode
                 </Button> :
                 <Button secondary onClick={onDarkModeClick}>
-                {mode ? "Light" : "Dark"} Mode
-            </Button>
-            }
-                
+                    {mode ? "Light" : "Dark"} Mode
+                 </Button>
+                }
             </header>
         </div>
     )
