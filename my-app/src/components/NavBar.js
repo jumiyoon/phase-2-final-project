@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 function NavBar() {
     const barStyle = {
         display: "inline-block",
-        width: "150px",
+        width: "110px",
         padding: "20px",
         margin: "0 6px 6px",
         background: "purple",
@@ -30,7 +30,7 @@ function NavBar() {
                 exact
                 style={barStyle}
                 activeStyle={{background:"orange"}}
-            >New Log Form</NavLink>
+            >Log Form</NavLink>
 
         </div>
     )

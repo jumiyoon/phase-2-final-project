@@ -1,5 +1,6 @@
 import React from "react";
 import LogsCard from "./LogsCard";
+import Filter from "./Filter";
 
 
 import { Card } from "semantic-ui-react";
@@ -9,6 +10,7 @@ function LogsPage( { logs, mode } ) {
 
     return (
         <Container>
+            <Filter logs={logs} />
             <Card.Group itemsPerRow = {4}>
                 {logs.map((log) => 
                     <LogsCard
