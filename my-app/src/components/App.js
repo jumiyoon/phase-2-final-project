@@ -15,6 +15,7 @@ import LogForm from "./LogForm";
 function App() {
   const [ allLogs, setAllLogs ] = useState([]);
   const [ isDarkMode, setIsDarkMode ] = useState(false);
+  const [ filterBy, setFilterBy ] = useState("")
 
   function darkModeClick() {
     setIsDarkMode((isDarkMode) => !isDarkMode)
@@ -44,6 +45,18 @@ function App() {
     setAllLogs(newLogList)
   }
 
+  function filterByCategory(categoryName){
+    setFilterBy(categoryName)
+  }
+
+  const logsToDisplay = allLogs.filter((log) => {
+    if (filterBy === "" || filterBy === "All") {
+      return log
+    } else {
+      return filterBy === log.category
+    }
+  })
+
 
   return (
     <div className="App" style={isDarkMode ? { backgroundImage:`url(${darkImage})`} :  { backgroundImage:`url(${image})`}}>
@@ -51,13 +64,13 @@ function App() {
       <NavBar />
         <Switch>
           <Route exact path="/logs">
-            <LogsPage logs={allLogs} mode={isDarkMode} />
+            <LogsPage logs={logsToDisplay} mode={isDarkMode} filterBy={filterBy} filterByCategory={filterByCategory} />
           </Route>
           <Route exact path="/newlog">
             <LogForm mode={isDarkMode} onFormSubmit={onFormSubmit} postRequest={addLog} />
           </Route>
           <Route exact path="/home">
-            <Home mode={isDarkMode} />
+            <Home mode={isDarkMode}  />
           </Route>
         </Switch>
         
