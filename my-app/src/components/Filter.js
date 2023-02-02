@@ -1,23 +1,32 @@
 import React from "react";
+import { Select } from 'semantic-ui-react'
 
 
 function Filter({ filterBy, filterByCategory }) {
-    function handleCategoryChange(e) {
-        filterByCategory(e.target.value);
-        console.log(e.target.value);
+    function handleCategoryChange(e, value) {
+        filterByCategory(value);
     }
+
+    const categoryOptions = [
+        { key: "All", value: "All", text: "All" },
+        { key: "Book", value: "Book", text: "Book"},
+        { key: "TedTalk / Podcast", value: "TedTalk / Podcast", text: "TedTalk / Podcast" }
+    ]
+
     return (
-        <div className = "ui filter">
+        <div>
             <p><strong>Filter by category</strong></p>
-             <select
+             <Select
+                placeholder="Select category"
                 name="sortByCategory"
                 value={filterBy}
-                onChange={handleCategoryChange}
-            >
-                <option value="All">All</option>
+                onChange={(e, {value})=> handleCategoryChange(e, value)}
+                options={categoryOptions}
+            />
+                {/* <option value="All">All</option>
                 <option value="Book">Book</option>
                 <option value="TedTalk / Podcast">TedTalk / Podcast</option>
-            </select>
+            </Select> */}
             <br/>
             <br/>
         </div>
