@@ -2,7 +2,7 @@ import React from "react";
 import { Select } from 'semantic-ui-react'
 
 
-function Filter({ filterBy, filterByCategory }) {
+function Filter({ filterBy, filterByCategory, mode }) {
     function handleCategoryChange(e, value) {
         filterByCategory(value);
     }
@@ -15,7 +15,8 @@ function Filter({ filterBy, filterByCategory }) {
 
     return (
         <div>
-            <p><strong>Filter by category</strong></p>
+            <br />
+            <p style={mode ? {color:"white"} : {color:"black"}}><strong>Filter by category</strong></p>
              <Select
                 placeholder="Select category"
                 name="sortByCategory"
@@ -23,10 +24,6 @@ function Filter({ filterBy, filterByCategory }) {
                 onChange={(e, {value})=> handleCategoryChange(e, value)}
                 options={categoryOptions}
             />
-                {/* <option value="All">All</option>
-                <option value="Book">Book</option>
-                <option value="TedTalk / Podcast">TedTalk / Podcast</option>
-            </Select> */}
             <br/>
             <br/>
         </div>

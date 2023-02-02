@@ -3,25 +3,24 @@ import book from "/Users/jumiyoon/Development/code/phase-2/phase-2-final-project
 import podcast from "/Users/jumiyoon/Development/code/phase-2/phase-2-final-project/my-app/src/assets/img/podcast icon.png";
 import ThoughtsButton from "./ThoughtsButton";
 import { Card } from "semantic-ui-react";
+import { Link } from "react-router-dom"
 
-function LogsCard( { title, author, category, url, genre, thoughts, mode }){
+function LogsCard( { log, mode }){
     return(
             <Card className="card" color={mode ? "orange" : "purple"}>
                 <div>
-                    <img alt={category} src={category === "Book" ? book : podcast}/>
+                    <img alt={log.category} src={log.category === "Book" ? book : podcast}/>
                 </div>
-                <h2>
-                    {title}
-                </h2>
+                <Link to={`/logs/${log.id}`} style={{color: "#C291A4"}}>{log.title}</Link>
                 <p>
-                    <strong>Author:</strong> {author} 
+                    <strong>Author:</strong> {log.author} 
                     <br />
-                    <a href={url}>Link</a>
+                    <a href={log.url}>Link</a>
                     <br />
-                    <strong>Genre:</strong> {genre}
+                    <strong>Genre:</strong> {log.genre}
                     <br />
                 </p>
-                <ThoughtsButton thoughts={thoughts} mode={mode} />
+                <ThoughtsButton thoughts={log.thoughts} mode={mode} />
             </Card>
     )
 }

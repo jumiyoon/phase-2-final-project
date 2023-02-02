@@ -5,6 +5,7 @@ function NavBar() {
     const barStyle = {
         display: "inline-block",
         width: "110px",
+        fontSize: "15px",
         padding: "20px",
         margin: "0 6px 6px",
         background: "purple",
@@ -17,7 +18,7 @@ function NavBar() {
                 to="/home"
                 exact
                 style={barStyle}
-                activeStyle={{background: "orange"}}
+                activeStyle={{background: "orange" }}
             >Home</NavLink>
             <NavLink
                 to="/logs"
