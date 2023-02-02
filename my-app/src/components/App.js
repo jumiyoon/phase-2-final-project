@@ -17,6 +17,7 @@ function App() {
   const [ allLogs, setAllLogs ] = useState([]);
   const [ isDarkMode, setIsDarkMode ] = useState(false);
   const [ filterBy, setFilterBy ] = useState("")
+  const [ searchBy, setSearchBy ] = useState("")
 
   function darkModeClick() {
     setIsDarkMode((isDarkMode) => !isDarkMode)
@@ -54,10 +55,23 @@ function App() {
     if (filterBy === "" || filterBy === "All") {
       return log
     } else {
-      return filterBy === log.category
+      return ( filterBy === log.category)
     }
   })
+  .filter((log) => {
+    let lowerCaseTitle = searchBy.toLowerCase();
+    return log.title.toLowerCase().startsWith(lowerCaseTitle);
+  })
 
+  // const logsToDisplay = allLogs.filter((log) => {
+  //   searh
+  //   log.title.startsWith(searchBy)
+  // })
+
+
+  function filterByTitle(title){
+    setSearchBy(title)
+  }
 
   return (
     <div className="App" style={isDarkMode ? { backgroundImage:`url(${darkImage})`} :  { backgroundImage:`url(${image})`}}>
@@ -65,7 +79,13 @@ function App() {
       <NavBar />
         <Switch>
           <Route exact path="/logs">
-            <LogsPage logs={logsToDisplay} mode={isDarkMode} filterBy={filterBy} filterByCategory={filterByCategory} />
+            <LogsPage 
+              logs={logsToDisplay} 
+              mode={isDarkMode} 
+              filterBy={filterBy} 
+              filterByCategory={filterByCategory}
+              filterByTitle={filterByTitle}
+              searchBy={searchBy} />
           </Route>
           <Route exact path="/newlog">
             <LogForm mode={isDarkMode} onFormSubmit={onFormSubmit} postRequest={addLog} />

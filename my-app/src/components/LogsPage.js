@@ -1,15 +1,18 @@
 import React from "react";
 import LogsCard from "./LogsCard";
 import Filter from "./Filter";
+import Search from "./Search";
+
 
 
 import { Card } from "semantic-ui-react";
 import { Container } from "semantic-ui-react";
 
-function LogsPage( { logs, mode, filterBy, filterByCategory} ) {
-
+function LogsPage( { logs, mode, filterBy, filterByCategory, filterByTitle, searchBy} ) {
+    
     return (
         <Container>
+            <Search filterByTitle={filterByTitle} searchBy={searchBy} />
             <Filter filterByCategory={filterByCategory} filterBy={filterBy} />
             <Card.Group itemsPerRow = {4}>
                 {logs.map((log) => 

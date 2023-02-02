@@ -4,10 +4,10 @@ import React from "react";
 function Filter({ filterBy, filterByCategory }) {
     function handleCategoryChange(e) {
         filterByCategory(e.target.value);
-        console.log(e.target.value)
+        console.log(e.target.value);
     }
     return (
-        <div>
+        <div className = "ui filter">
             <p><strong>Filter by category</strong></p>
              <select
                 name="sortByCategory"
