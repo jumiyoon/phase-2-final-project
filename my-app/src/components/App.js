@@ -7,7 +7,7 @@ import darkImage from "/Users/jumiyoon/Development/code/phase-2/phase-2-final-pr
 import LogsPage from "./LogsPage";
 import NavBar from "./NavBar";
 import LogForm from "./LogForm";
-import LogCardDetail from "./LogCardDetail";
+
 
 
 
@@ -87,9 +87,6 @@ function App() {
               filterByCategory={filterByCategory}
               filterByTitle={filterByTitle}
               searchBy={searchBy} />
-          </Route>
-          <Route exact path="/logs/:id">
-            <LogCardDetail />
           </Route>
           <Route path="/newlog">
             <LogForm mode={isDarkMode} onFormSubmit={onFormSubmit} postRequest={addLog} />
