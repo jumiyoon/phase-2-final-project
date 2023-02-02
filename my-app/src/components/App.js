@@ -12,6 +12,7 @@ import LogForm from "./LogForm";
 
 
 
+
 function App() {
   const [ allLogs, setAllLogs ] = useState([]);
   const [ isDarkMode, setIsDarkMode ] = useState(false);
@@ -69,7 +70,7 @@ function App() {
           <Route exact path="/newlog">
             <LogForm mode={isDarkMode} onFormSubmit={onFormSubmit} postRequest={addLog} />
           </Route>
-          <Route exact path="/home">
+          <Route path="/home">
             <Home mode={isDarkMode}  />
           </Route>
         </Switch>
