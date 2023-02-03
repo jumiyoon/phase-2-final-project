@@ -11,7 +11,7 @@ function NavBar() {
         background: "purple",
         color: "white",      
     };
-    
+
     return (
         <div>
             <NavLink

@@ -17,7 +17,7 @@ function LogCardDetail( { mode, logs }){
     }, [id])
 
     
-    if (!logsToDisplay) return <h2> Loading . . . </h2>
+    if (logsToDisplay === null) return <h2> Loading . . . </h2>
 
     const { title, author, url, genre, category, thoughts } = logsToDisplay
 
@@ -38,7 +38,7 @@ function LogCardDetail( { mode, logs }){
                     </p>
                     <ThoughtsButton thoughts={thoughts} mode={mode} />
                 </Card>
-                </Container>
+            </Container>
         </div>
     )
 }
