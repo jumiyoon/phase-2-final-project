@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Header from "./Header";
 import Home from "./Home";
 import image from "/Users/jumiyoon/Development/code/phase-2/phase-2-final-project/my-app/src/assets/img/square-background.png";
@@ -71,26 +71,23 @@ function App() {
     <div className="App" style={isDarkMode ? { backgroundImage:`url(${darkImage})`} :  { backgroundImage:`url(${image})`}}>
       <Header onDarkModeClick={darkModeClick} mode={isDarkMode} />
       <NavBar />
-        <Switch>
-          <Route exact path="/logs">
-            <LogsPage 
+        <Routes>
+          <Route path="/" element ={<Home mode={isDarkMode} />}  />
+          <Route path="/logs" element =
+          {<LogsPage 
               logs={logsToDisplay} 
               mode={isDarkMode} 
               filterBy={filterBy} 
               filterByCategory={filterByCategory}
               filterByTitle={filterByTitle}
-              searchBy={searchBy} />
-          </Route>
-          <Route path="/logs/:id">
-            <LogCardDetail logs={logsToDisplay} />
-          </Route>
-          <Route path="/newlog">
+              searchBy={searchBy} />} 
+          />
+            <Route path="/logs/:id" element ={
+              <LogCardDetail logs={allLogs} mode={isDarkMode} /> } />
+          <Route path="/newlog" element ={
             <LogForm mode={isDarkMode} onFormSubmit={onFormSubmit} postRequest={addLog} />
-          </Route>
-          <Route path="/">
-            <Home mode={isDarkMode}  />
-          </Route>
-        </Switch>
+          } />
+        </Routes>
         
     </div>
   );

@@ -41,3 +41,8 @@ body {
   font-family: Georgia, 'Times New Roman', Times, serif;
   margin: 0% 2% 0% 2%;
 }
+
+.card {
+  margin: 0% 2% 0% 2%;
+  width:500px;
+}

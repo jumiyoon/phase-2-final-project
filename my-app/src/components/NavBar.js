@@ -11,26 +11,23 @@ function NavBar() {
         background: "purple",
         color: "white",      
     };
-
+    
     return (
         <div>
             <NavLink
-                to="/home"
+                to="/"
                 exact
                 style={barStyle}
-                activeStyle={{background: "orange" }}
             >Home</NavLink>
             <NavLink
                 to="/logs"
                 exact
                 style={barStyle}
-                activeStyle={{background: "orange"}}
             >View Logs</NavLink>
             <NavLink
                 to="/newlog"
                 exact
                 style={barStyle}
-                activeStyle={{background:"orange"}}
             >Log Form</NavLink>
 
         </div>
