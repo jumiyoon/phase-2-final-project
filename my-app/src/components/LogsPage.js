@@ -6,7 +6,7 @@ import { Card, Container } from "semantic-ui-react";
 
 
 function LogsPage( { logs, mode, filterBy, filterByCategory, filterByTitle, searchBy} ) {
-    
+
     return (
         <Container>
             <Search filterByTitle={filterByTitle} searchBy={searchBy} mode={mode} />

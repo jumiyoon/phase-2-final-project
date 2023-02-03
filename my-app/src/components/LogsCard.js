@@ -7,6 +7,7 @@ import { Link } from "react-router-dom"
 
 function LogsCard( { log, mode }){
     return(
+
             <Card className="card" color={mode ? "orange" : "purple"}>
                 <div>
                     <img alt={log.category} src={log.category === "Book" ? book : podcast}/>
