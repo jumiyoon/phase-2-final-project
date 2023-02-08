@@ -7,7 +7,7 @@ import { Card, Container } from "semantic-ui-react";
 import DeleteCardButton from "./DeleteCardButton";
 
 
-function LogCardDetail( { mode, logs }){
+function LogCardDetail( { mode }){
     const [logsToDisplay, setLogsToDisplay] = useState(null);
     let { id } = useParams();
     

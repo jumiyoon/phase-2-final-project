@@ -83,7 +83,7 @@ function App() {
               searchBy={searchBy} />} 
           />
             <Route path="/logs/:id" element ={
-              <LogCardDetail logs={allLogs} mode={isDarkMode} /> } />
+              <LogCardDetail mode={isDarkMode} /> } />
           <Route path="/newlog" element ={
             <LogForm mode={isDarkMode} onFormSubmit={onFormSubmit} postRequest={addLog} />
           } />
