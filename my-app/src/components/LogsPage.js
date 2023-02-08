@@ -12,7 +12,6 @@ function LogsPage( { logs, mode, filterBy, filterByCategory, filterByTitle, sear
             <Container>
                 <Search filterByTitle={filterByTitle} searchBy={searchBy} mode={mode} />
                 <Filter filterByCategory={filterByCategory} filterBy={filterBy} mode={mode} />
-                <h4 style={mode ? {color:"white"} : {color:"black"}}>Click the title to view individual log!</h4>
                 <Card.Group itemsPerRow = {4}>
                     {logs.map((log) => 
                         <LogsCard
@@ -23,7 +22,7 @@ function LogsPage( { logs, mode, filterBy, filterByCategory, filterByTitle, sear
                 )}
                 </Card.Group>
             </Container>
-        </div>
+        </div> 
     )
 }
 
