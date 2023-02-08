@@ -12,6 +12,7 @@ function LogsPage( { logs, mode, filterBy, filterByCategory, filterByTitle, sear
             <Container>
                 <Search filterByTitle={filterByTitle} searchBy={searchBy} mode={mode} />
                 <Filter filterByCategory={filterByCategory} filterBy={filterBy} mode={mode} />
+                <h3 style={mode ? {color:"white"} : {color:"black"}}>Click title to view individual log</h3>
                 <Card.Group itemsPerRow = {4}>
                     {logs.map((log) => 
                         <LogsCard

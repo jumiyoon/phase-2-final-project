@@ -23,7 +23,7 @@ function LogCardDetail( { mode }){
     const { title, author, url, genre, category, thoughts } = logsToDisplay
 
     return ( 
-        <div class="ui centered card">
+        <div className="ui centered card">
             <Container>
                 <Card key={id} className="card" color={mode ? "orange" : "purple"}>
                     <br/>
