@@ -19,7 +19,7 @@ function LogsCard( { log, mode }){
                     <strong>Genre:</strong> {log.genre}
                     <br />
                 </p>
-                <ThoughtsButton thoughts={log.thoughts} />
+                <ThoughtsButton thoughts={log.thoughts} mode={mode} />
             </Card>
     )
 }

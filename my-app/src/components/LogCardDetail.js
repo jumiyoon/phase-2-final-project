@@ -4,6 +4,7 @@ import book from "/Users/jumiyoon/Development/code/phase-2/phase-2-final-project
 import podcast from "/Users/jumiyoon/Development/code/phase-2/phase-2-final-project/my-app/src/assets/img/podcast icon.png";
 import ThoughtsButton from "./ThoughtsButton";
 import { Card, Container } from "semantic-ui-react";
+import DeleteCardButton from "./DeleteCardButton";
 
 
 function LogCardDetail( { mode, logs }){
@@ -37,6 +38,8 @@ function LogCardDetail( { mode, logs }){
                     <br />
                     </p>
                     <ThoughtsButton thoughts={thoughts} mode={mode} />
+                    <DeleteCardButton />
+             
                 </Card>
             </Container>
         </div>
