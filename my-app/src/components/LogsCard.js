@@ -9,9 +9,7 @@ function LogsCard( { log, mode }){
     return(
 
             <Card className="card" color={mode ? "orange" : "purple"}>
-                <div>
-                    <img alt={log.category} src={log.category === "Book" ? book : podcast}/>
-                </div>
+                <img alt={log.category} src={log.category === "Book" ? book : podcast}/>
                 <Link to={`/logs/${log.id}`} style={{color: "#C291A4"}}>{log.title}</Link>
                 <p>
                     <strong>Author:</strong> {log.author} 
@@ -21,7 +19,7 @@ function LogsCard( { log, mode }){
                     <strong>Genre:</strong> {log.genre}
                     <br />
                 </p>
-                <ThoughtsButton thoughts={log.thoughts} mode={mode} />
+                <ThoughtsButton thoughts={log.thoughts} />
             </Card>
     )
 }

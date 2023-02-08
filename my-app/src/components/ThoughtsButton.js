@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button } from 'semantic-ui-react'
 
-function ThoughtsButton( { thoughts, mode }) {
+function ThoughtsButton( { thoughts }) {
     const [ isOpen, setIsOpen ] = useState(false)
     const button = <Button primary onClick = {handleClick}>{ isOpen ? "Hide Thoughts" : "View Thoughts" } </ Button>
 
@@ -10,7 +10,7 @@ function ThoughtsButton( { thoughts, mode }) {
     }
 
     return (
-        <div className={mode ? "darkText" : "lightText"}>
+        <div>
             {button} <br />
             { isOpen ?  <span>{thoughts}</span> : null }
             <br />
