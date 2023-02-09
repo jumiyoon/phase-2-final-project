@@ -8,6 +8,7 @@ import LogsPage from "./LogsPage";
 import NavBar from "./NavBar";
 import LogForm from "./LogForm";
 import LogCardDetail from "./LogCardDetail";
+import DeleteCardButton from "./DeleteCardButton";
 
 
 
@@ -82,8 +83,8 @@ function App() {
               filterByTitle={filterByTitle}
               searchBy={searchBy} />} 
           />
-            <Route path="/logs/:id" element ={
-              <LogCardDetail mode={isDarkMode} /> } />
+            <Route path="/logs/:id" element ={<LogCardDetail mode={isDarkMode} /> } />
+            <Route path="/logs/:id/delete" element ={<DeleteCardButton /> } />
           <Route path="/newlog" element ={
             <LogForm mode={isDarkMode} onFormSubmit={onFormSubmit} postRequest={addLog} />
           } />

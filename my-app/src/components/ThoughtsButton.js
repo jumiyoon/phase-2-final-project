@@ -3,7 +3,7 @@ import { Button } from 'semantic-ui-react'
 
 function ThoughtsButton( { thoughts }) {
     const [ isOpen, setIsOpen ] = useState(false)
-    const button = <Button primary onClick = {handleClick}>{ isOpen ? "Hide Thoughts" : "View Thoughts" } </ Button>
+    const button = <Button primary onClick = {handleClick}>{ isOpen ? "Hide Thoughts 🧠" : "View Thoughts 🧠" } </ Button>
 
     function handleClick() {
         setIsOpen(!isOpen)

@@ -10,6 +10,7 @@ import DeleteCardButton from "./DeleteCardButton";
 function LogCardDetail( { mode }){
     const [logsToDisplay, setLogsToDisplay] = useState(null);
     let { id } = useParams();
+    console.log(id)
     
     useEffect(() => {
         fetch(`http://localhost:3000/reflections/${id}`)
@@ -38,8 +39,8 @@ function LogCardDetail( { mode }){
                     <br />
                     </p>
                     <ThoughtsButton thoughts={thoughts} mode={mode} />
-                    <DeleteCardButton />
-             
+                    {/* <Link to={`/logs/${id}/delete`}><DeleteCardButton /></Link> */}
+                    <DeleteCardButton id={id} />
                 </Card>
             </Container>
         </div>

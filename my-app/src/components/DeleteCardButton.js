@@ -1,34 +1,47 @@
-import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import React from "react";
 import { Button } from 'semantic-ui-react'
+import { useNavigate } from "react-router-dom";
 
-function DeleteCardButton() {
-    const button = <Button secondary onClick={handleClick}>Delete Card</Button>
-    const { id } = useParams();
+function DeleteCardButton( { id }) {
+    const button = <Button secondary onClick={()=>handleClick(id)} style={{background: "#BF0000"}}>Delete Log</Button>
+
+
+    console.log(id)
 
     function handleClick(id){
-       const confirm= window.confirm("Are you sure you want to delete this log?");
 
-       if (confirm) {
-            deleteCard(id);
-       } else {
-            console.log("Log not deleted")
-       }
-       console.log(confirm);
+            fetch(`http://localhost:3000/reflections/${id}`, {
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            })
+            .then(res => res.json())
+            .then(data => console.log(data))        
+
+    //    const confirm= window.confirm("This log will be deleted.");
+
+    //    if (confirm) {
+    //         useEffect(() => {
+    //             fetch(`http://localhost:3000/reflections/${id}`, {
+    //                 method: "DELETE",
+    //                 headers: {
+    //                     "Content-Type": "application/json"
+    //                 }
+    //             })
+    //             .then(res => res.json())
+    //             .then(data => console.log(data))        
+    //         }, [id])
+    //    } else {
+    //         console.log("Log not deleted")
+    //    }
+    //    console.log(confirm);
     }
 
-    function deleteCard(id){
-        useEffect(() => {fetch(`http://localhost:3000/reflections/${id}`, {
-            method: "DELETE",
-            headers: {
-                "Content-Type": "application/json"
-            }
-        })
-        .then(res => res.json())
-        .then(data => console.log(data))
-        }, [id])
-    }
 
+
+    
+    
     return(
         <div>
             {button}
@@ -37,6 +50,6 @@ function DeleteCardButton() {
         </div>
     )
 
-}
+    }
 
 export default DeleteCardButton;
