@@ -15,7 +15,7 @@ function LogForm( { mode, onFormSubmit }){
     function handleChange(event) {
         let name = event.target.name;
         let value = event.target.value;
-
+        
         if (event.target.name === undefined) {
             name = "genre"
             value = event.target.textContent;
@@ -43,7 +43,7 @@ function LogForm( { mode, onFormSubmit }){
             {mode ? <Container>
                     <Segment inverted>
                     <h1>Create New Log</h1>
-                    <Form size="large" inverted onSubmit={handleSubmit} autocomplete="off">
+                    <Form size="large" inverted onSubmit={handleSubmit} autoComplete="off">
                         <Form.Group >
                             <Form.Input fluid label="Title" placeholder="Title" name="title" width={5} onChange={handleChange} />
                             <Form.Input fluid label="Author" placeholder="Author" name="author" width={5} onChange={handleChange} />
@@ -86,7 +86,7 @@ function LogForm( { mode, onFormSubmit }){
                 </Container> : 
                 <Container>
                 <h1>Create New Log</h1>
-                    <Form size="large" onSubmit={handleSubmit} autocomplete="off">
+                    <Form size="large" onSubmit={handleSubmit} autoComplete="off">
                         <Form.Group >
                             <Form.Input fluid label="Title" placeholder="Title" name="title" width={5} onChange={handleChange} />
                             <Form.Input fluid label="Author" placeholder="Author" name="author" width={5} onChange={handleChange} />
@@ -125,7 +125,8 @@ function LogForm( { mode, onFormSubmit }){
                         </Form.Group>
                         <Button type='submit'>Submit</Button>
                     </Form>
-            </Container>}
+            </Container>
+            }
         </div>
     )
 

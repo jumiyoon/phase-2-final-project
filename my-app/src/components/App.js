@@ -10,15 +10,13 @@ import LogForm from "./LogForm";
 import LogCardDetail from "./LogCardDetail";
 
 
-
-
-
 function App() {
   const [ allLogs, setAllLogs ] = useState([]);
   const [ isDarkMode, setIsDarkMode ] = useState(false);
   const [ filterBy, setFilterBy ] = useState("")
   const [ searchBy, setSearchBy ] = useState("")
 
+  // dark mode
   function darkModeClick() {
     setIsDarkMode((isDarkMode) => !isDarkMode)
   }
@@ -29,6 +27,7 @@ function App() {
       .then((data) => setAllLogs(data))
   }, [])
 
+  // submit new log 
   function onFormSubmit(newLog) {
     fetch("http://localhost:3000/reflections", {
       method: "POST",
@@ -46,6 +45,8 @@ function App() {
     const newLogList = [...allLogs, newLog]
     setAllLogs(newLogList)
   }
+
+  // filter logs
 
   function filterByCategory(categoryName){
     setFilterBy(categoryName)
@@ -67,6 +68,8 @@ function App() {
   function filterByTitle(title){
     setSearchBy(title)
   }
+
+  // delete log
 
   function deleteLog(id) {
     const deleteId = parseInt(id);

@@ -6,8 +6,6 @@ function DeleteCardButton( { id, deleteLog }) {
     const button = <Button secondary onClick={()=>handleClick(id)} style={{background: "#BF0000"}}>Delete Log</Button>
     const navigate = useNavigate();
 
-    console.log(id)
-
     function handleClick(id){
        const confirm= window.confirm("This log will be deleted.");
 
