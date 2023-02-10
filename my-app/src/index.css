@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.App {
+  text-align: center;
+  min-height: 125vh;
+
+}
+
+.header {
+  height: 150px;
+  padding: 100px;
+}
+.darkMode {
+  color: rgb(245, 195, 103);
+  font-size: 7em;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin: 0% 2% 0% 2%;
+}
+
+.lightMode {
+  color: #b392d2;
+  font-size: 7em;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin: 0% 2% 0% 2%;
+}
+
+.darkModeHome {
+  color: rgb(240, 218, 177);
+  font-size: 4em;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin: 0% 2% 0% 2%;
+}
+
+.lightModeHome {
+  color: #765c8f;
+  font-size: 4em;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  margin: 0% 2% 0% 2%;
+}
+
+.card {
+  margin: 0% 2% 0% 2%;
+  width:500px;
+}
+
