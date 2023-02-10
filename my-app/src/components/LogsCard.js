@@ -1,6 +1,6 @@
 import React from "react";
-import book from "/Users/jumiyoon/Development/code/phase-2/phase-2-final-project/my-app/src/assets/img/book icon.png";
-import podcast from "/Users/jumiyoon/Development/code/phase-2/phase-2-final-project/my-app/src/assets/img/podcast icon.png";
+import book from "/Users/jumiyoon/Development/code/phase-2/phase-2-final-project/my-app/src/assets/img/updated book.jpg";
+import podcast from "/Users/jumiyoon/Development/code/phase-2/phase-2-final-project/my-app/src/assets/img/updated podcast.jpg";
 import ThoughtsButton from "./ThoughtsButton";
 import { Card } from "semantic-ui-react";
 import { Link } from "react-router-dom"

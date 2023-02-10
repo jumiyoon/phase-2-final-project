@@ -1,27 +1,26 @@
 import React, {  useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import book from "/Users/jumiyoon/Development/code/phase-2/phase-2-final-project/my-app/src/assets/img/book icon.png";
-import podcast from "/Users/jumiyoon/Development/code/phase-2/phase-2-final-project/my-app/src/assets/img/podcast icon.png";
+import book from "/Users/jumiyoon/Development/code/phase-2/phase-2-final-project/my-app/src/assets/img/updated book.jpg";
+import podcast from "/Users/jumiyoon/Development/code/phase-2/phase-2-final-project/my-app/src/assets/img/updated podcast.jpg";
 import ThoughtsButton from "./ThoughtsButton";
 import { Card, Container } from "semantic-ui-react";
 import DeleteCardButton from "./DeleteCardButton";
 
 
-function LogCardDetail( { mode }){
-    const [logsToDisplay, setLogsToDisplay] = useState(null);
+function LogCardDetail( { mode, deleteLog }){
+    const [logToDisplay, setLogToDisplay] = useState(null);
     let { id } = useParams();
-    console.log(id)
-    
+
     useEffect(() => {
         fetch(`http://localhost:3000/reflections/${id}`)
             .then((res) => res.json())
-            .then((data) => setLogsToDisplay(data) )
+            .then((data) => setLogToDisplay(data) )
     }, [id])
 
     
-    if (logsToDisplay === null) return <h2> Loading . . . </h2>
+    if (logToDisplay === null) return <h2> Loading . . . </h2>
 
-    const { title, author, url, genre, category, thoughts } = logsToDisplay
+    const { title, author, url, genre, category, thoughts } = logToDisplay
 
     return ( 
         <div className="ui centered card">
@@ -39,8 +38,7 @@ function LogCardDetail( { mode }){
                     <br />
                     </p>
                     <ThoughtsButton thoughts={thoughts} mode={mode} />
-                    {/* <Link to={`/logs/${id}/delete`}><DeleteCardButton /></Link> */}
-                    <DeleteCardButton id={id} />
+                    <DeleteCardButton id={id} deleteLog={deleteLog}  />
                 </Card>
             </Container>
         </div>

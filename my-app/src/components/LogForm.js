@@ -8,7 +8,7 @@ function LogForm( { mode, onFormSubmit }){
         author: "Ernest Hemingway",
         genre: "Fiction",
         category: "Book",
-        url: "www.google.com",
+        url: "https://www.goodreads.com/book/show/2165.The_Old_Man_and_the_Sea",
         thoughts: "This was interesting..."
     })
 
@@ -43,7 +43,7 @@ function LogForm( { mode, onFormSubmit }){
             {mode ? <Container>
                     <Segment inverted>
                     <h1>Create New Log</h1>
-                    <Form size="large" inverted onSubmit={handleSubmit}>
+                    <Form size="large" inverted onSubmit={handleSubmit} autocomplete="off">
                         <Form.Group >
                             <Form.Input fluid label="Title" placeholder="Title" name="title" width={5} onChange={handleChange} />
                             <Form.Input fluid label="Author" placeholder="Author" name="author" width={5} onChange={handleChange} />
@@ -78,7 +78,7 @@ function LogForm( { mode, onFormSubmit }){
                         />
                         </Form.Group>
                         <Form.Group>
-                            <Form.Field width={15} label="Thoughts" placeholder="My Thoughts" control='textarea' rows='5' onChange={handleChange} />
+                            <Form.Field width={15} name="thoughts" label="Thoughts" placeholder="My Thoughts" control='textarea' rows='5' onChange={handleChange} />
                         </Form.Group>
                         <Button type='submit'>Submit</Button>
                     </Form>
@@ -86,7 +86,7 @@ function LogForm( { mode, onFormSubmit }){
                 </Container> : 
                 <Container>
                 <h1>Create New Log</h1>
-                    <Form size="large" onSubmit={handleSubmit}>
+                    <Form size="large" onSubmit={handleSubmit} autocomplete="off">
                         <Form.Group >
                             <Form.Input fluid label="Title" placeholder="Title" name="title" width={5} onChange={handleChange} />
                             <Form.Input fluid label="Author" placeholder="Author" name="author" width={5} onChange={handleChange} />

@@ -8,7 +8,7 @@ import LogsPage from "./LogsPage";
 import NavBar from "./NavBar";
 import LogForm from "./LogForm";
 import LogCardDetail from "./LogCardDetail";
-import DeleteCardButton from "./DeleteCardButton";
+
 
 
 
@@ -68,6 +68,13 @@ function App() {
     setSearchBy(title)
   }
 
+  function deleteLog(id) {
+    const deleteId = parseInt(id);
+    setAllLogs(allLogs.filter((log) => deleteId !== log.id));
+    console.log("log deleted")
+  }
+  
+
   return (
     <div className="App" style={isDarkMode ? { backgroundImage:`url(${darkImage})`} :  { backgroundImage:`url(${image})`}}>
       <Header onDarkModeClick={darkModeClick} mode={isDarkMode} />
@@ -83,8 +90,7 @@ function App() {
               filterByTitle={filterByTitle}
               searchBy={searchBy} />} 
           />
-            <Route path="/logs/:id" element ={<LogCardDetail mode={isDarkMode} /> } />
-            <Route path="/logs/:id/delete" element ={<DeleteCardButton /> } />
+            <Route path="/logs/:id" element ={<LogCardDetail mode={isDarkMode} deleteLog={deleteLog} /> } />
           <Route path="/newlog" element ={
             <LogForm mode={isDarkMode} onFormSubmit={onFormSubmit} postRequest={addLog} />
           } />
