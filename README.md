@@ -44,4 +44,4 @@ Runs the json server on https://localhost:3000/
 -  https://github.com/jumiyoon/phase-2-final-project
 
 ## Published Link
-https://jumiyoon.github.io/phase-2-final-project/
+- https://jumiyoon.github.io/phase-2-final-project/
