@@ -2,8 +2,10 @@
 ThoughtsLog is a virtual notebook that allows users to keep track of and record their reflections of books and podcasts.
 
 ## Intro Video
+- https://youtu.be/X_3EXEnB2iY
 
 ## Preview
+- 
 
 ## Usage / Functionality
 - log title, author, genre, and personal reflection of books / podcasts
@@ -21,4 +23,4 @@ ThoughtsLog is a virtual notebook that allows users to keep track of and record 
 - React.js
 
 ## Github
-- https://github.com/jumiyoon/phase-2-final-project
+-  https://jumiyoon.github.io/phase-2-final-project/
