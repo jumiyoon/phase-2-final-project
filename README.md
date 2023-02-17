@@ -20,9 +20,11 @@ ThoughtsLog is a virtual notebook that allows users to keep track of and record 
 
 
 `npm install`
+
 Downloads all modules listed in package.json.
 
 `npm start`
+
 Runs the app in the development mode.
 Open http://localhost:3000 to view it in the browser.
 
