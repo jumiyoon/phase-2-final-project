@@ -29,9 +29,7 @@ Runs the app in the development mode.
 
 `json-server --watch db.json`
 
-Runs the json server.
-
-
+Runs the json server on https://localhost:3000/
 
 
 
@@ -43,4 +41,7 @@ Runs the json server.
 - React.js
 
 ## Github
--  https://jumiyoon.github.io/phase-2-final-project/
+-  https://github.com/jumiyoon/phase-2-final-project
+
+## Published Link
+https://jumiyoon.github.io/phase-2-final-project/
