@@ -5,7 +5,7 @@ ThoughtsLog is a virtual notebook that allows users to keep track of and record 
 - https://youtu.be/X_3EXEnB2iY
 
 ## Preview
-- 
+- ![finalgif.gif](https://github.com/jumiyoon/phase-2-final-project/blob/main/finalgif.gif)
 
 ## Usage / Functionality
 - log title, author, genre, and personal reflection of books / podcasts
