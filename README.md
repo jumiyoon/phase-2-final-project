@@ -15,6 +15,21 @@ ThoughtsLog is a virtual notebook that allows users to keep track of and record 
 - filter logs by title and category
 - enable dark mode / light mode based on user preference
 
+## Commands
+- In the project directory, you can run:
+
+
+`npm install`
+Downloads all modules listed in package.json.
+
+`npm start`
+Runs the app in the development mode.
+Open http://localhost:3000 to view it in the browser.
+
+
+
+
+
 ## Tech Stack
 - JavaScript
 - HTML
