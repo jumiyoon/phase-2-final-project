@@ -28,6 +28,7 @@ function LogForm( { mode, onFormSubmit }){
     function handleSubmit(event) {
         console.log(form);
         onFormSubmit(form);
+        alert("New Log Submitted!")
     }
 
  

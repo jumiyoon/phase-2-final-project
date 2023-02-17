@@ -93,7 +93,7 @@ function App() {
               filterByTitle={filterByTitle}
               searchBy={searchBy} />} 
           />
-            <Route path="/logs/:id" element ={<LogCardDetail mode={isDarkMode} deleteLog={deleteLog} /> } />
+          <Route path="/logs/:id" element ={<LogCardDetail mode={isDarkMode} deleteLog={deleteLog} /> } />
           <Route path="/newlog" element ={
             <LogForm mode={isDarkMode} onFormSubmit={onFormSubmit} postRequest={addLog} />
           } />
